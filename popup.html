@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <select id="noteSelector"></select>
+    <button id="newNote" title="New note">+</button>
+    <button id="settingsBtn" title="Settings">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="sticky">
+    <textarea
+      id="note"
+      maxlength="2048"
+      placeholder="Write your sticky note here..."></textarea>
+
+    <div id="notePreview" class="note-preview" hidden></div>
+
+    <div id="counter">0 / 2048</div>
+    <button id="deleteBtn">Delete</button>
+
+    <!-- Inline Confirm Box -->
+    <div id="confirmBox" hidden>
+      <p>Delete this note?</p>
+      <div class="confirmButtons">
+        <button id="confirmDelete">Yes</button>
+        <button id="cancelDelete">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky" id="settingsPanel" hidden>
+    <h3>Settings</h3>
+
+    <label class="settingsRow">
+      <input type="checkbox" id="confirmDeleteToggle">
+      Ask before deleting a note
+    </label>
+
+    <label class="settingsRow">
+      <input type="checkbox" id="richTextToggle">
+      Enable <b>bold</b> / <i>italic</i> formatting
+    </label>
+
+    <label class="settingsRow settingsRowColumn">
+      Theme
+      <select id="themeSelect">
+        <option value="classic">Classic</option>
+        <option value="modern">Modern</option>
+      </select>
+    </label>
+
+    <div class="settingsRow settingsRowColumn">
+      <span>Backup</span>
+      <div class="settingsButtons">
+        <button id="exportBtn">Export notes</button>
+        <button id="importBtn">Import notes</button>
+      </div>
+      <input type="file" id="importFile" accept="application/json" hidden>
+      <p id="importStatus" class="settingsPlaceholder" hidden></p>
+    </div>
+
+    <button id="closeSettings">Close</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
