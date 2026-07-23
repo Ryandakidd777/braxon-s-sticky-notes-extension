@@ -3,6 +3,11 @@ A simple sticky-notes extension for your browser — quick notes right in your t
 
 <img src="/Images/StickyNotesExtensionIcon@500x.png" width="160" alt="icon" />
 
+## Installing
+[Tutorial page](https://braxonsstuff.com/Stuff/Braxons-Sticky-Notes/)
+
+Or see the [tutorial video](https://youtu.be/29OVzBCaYMg) for a walkthrough & showcase
+
 ## Features
 - **Multiple notes** — switch with the dropdown, add new ones with `+`
 - **Bold / italic formatting** — wrap text in `<b>` or `<i>` tags
@@ -10,15 +15,6 @@ A simple sticky-notes extension for your browser — quick notes right in your t
 - **Delete confirmation** — optional prompt before clearing a note
 - **Export / Import** — back up or restore notes as a JSON file
 - **Local storage** — everything stays on your machine
-
-## Installing
-Not on the Chrome Web Store, so load it manually:
-1. Download or clone this repo
-2. Go to `chrome://extensions`, enable **Developer mode**
-3. Click **Load unpacked**, select the project folder
-4. Pin the extension and click the icon to open your notes
-
-Or see the [tutorial video](#) for a walkthrough. (COMING SOON)
 
 Works in most Chromium-based browsers (Chrome, Edge, Brave, etc).
 
